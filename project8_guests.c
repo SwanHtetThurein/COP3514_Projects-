@@ -104,7 +104,7 @@ void clear_list(struct guest *list)
     while (list != NULL){
         p= list; //Assign current node to "p"(temporary variable)
         list = list -> next; //Update list to the next node before freeing it
-        free(p)
+        free(p);
     }
 }
 

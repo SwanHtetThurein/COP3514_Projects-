@@ -58,7 +58,7 @@ struct guest *add_guest(struct guest *list)
     for (struct guest *p = list; p != NULL; p = p -> next)
     {
         if (strcmp(p->phone, new_guest->phone) == 0){ 
-            printf("guest already exists.\n");
+            printf("guest already exists.");
             free(new_guest);//Free the allocated memory 
             return list; //Return list without adding anything new 
         }
@@ -100,12 +100,11 @@ void print_list(struct guest *list)
 
 void clear_list(struct guest *list)
 {
+    struct guest *p;
     while (list != NULL){
-        struct guest *p = list; //Assign current node to "p"(temporary variable)
+        p= list; //Assign current node to "p"(temporary variable)
         list = list -> next; //Update list to the next node before freeing it
-        if(p != NULL){
-            free(p);
-        }
+        free(p)
     }
 }
 
